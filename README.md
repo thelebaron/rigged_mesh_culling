@@ -1,0 +1,1 @@
+# rigged_mesh_culling
