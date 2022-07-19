@@ -12,10 +12,10 @@ public class MeshClipper : MonoBehaviour
     public  Vector3     position;
     public  float       radius = 1;
 
-    void Start()
+    void OnEnable()
     {
         skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
-        material = skinnedMeshRenderer.material;
+        material = skinnedMeshRenderer.sharedMaterial;
         shader = material.shader;
     }
 
@@ -31,8 +31,8 @@ public class MeshClipper : MonoBehaviour
         color.a = 0.5f;
         Gizmos.color = color;
         
-        position = (Vector3)material.GetVector("_ClipSpherePosition");
-        radius = material.GetFloat("_ClipSphereRadius");
+        position = (Vector3)material.GetVector("_Position");
+        radius = material.GetFloat("_Radius");
         
         //set radius in material
         //material.SetFloat("_ClipSphereRadius", radius);
