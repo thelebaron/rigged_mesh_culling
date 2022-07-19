@@ -22,21 +22,25 @@ public class CharacterRigPostProcessor : AssetPostprocessor
 
     void Apply(Transform t)
     {
+        // Delete maya rig controls
         if (t.name.Contains("_Ctrl_Reference"))
             Object.DestroyImmediate(t.gameObject);
 
+        // Get SkinnedMeshRenderer
         var skinnedMeshRenderer = t.gameObject.GetComponent<SkinnedMeshRenderer>();
         if (skinnedMeshRenderer != null)
         {
+            // Get the source mesh in its default pose
             var mesh = skinnedMeshRenderer.sharedMesh;
             
             // https://forum.unity.com/threads/preskinned-bindpose-vertex-position.861220/#post-5697853
-            // set TEXCOORD3 to the object's vertex positions, thanks mr bgolus!
+            // Set TEXCOORD3 to the object's vertex positions, thanks mr bgolus!
             mesh.SetUVs(3, mesh.vertices);
 
             skinnedMeshRenderer.sharedMesh = mesh;
 
-            t.gameObject.AddComponent<ModifiedRigUvs>();
+            var postProcessedUvs = t.gameObject.AddComponent<ModifiedRigUvs>();
+            postProcessedUvs.UV3Modified = true;
         }
         
         
