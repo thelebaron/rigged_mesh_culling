@@ -2006,6 +2006,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 253833271de77754ca884219a70bdba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UV0Modified: 0
+  UV1Modified: 0
+  UV2Modified: 0
+  UV3Modified: 0
 --- !u!137 &1195851030
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -2461,7 +2465,6 @@ GameObject:
   - component: {fileID: 1504438606}
   - component: {fileID: 1504438608}
   - component: {fileID: 1504438607}
-  - component: {fileID: 1504438609}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2496,6 +2499,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 253833271de77754ca884219a70bdba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UV0Modified: 0
+  UV1Modified: 0
+  UV2Modified: 0
+  UV3Modified: 0
 --- !u!137 &1504438608
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -2588,20 +2595,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.046040058, y: -0.016930938, z: 0.17060012}
     m_Extent: {x: 0.6808003, y: 1.1665084, z: 0.5755}
   m_DirtyAABB: 0
---- !u!114 &1504438609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504438605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c38270c10fb369e43bef4cc869e69191, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
-  radius: 0
 --- !u!1 &1539479096
 GameObject:
   m_ObjectHideFlags: 0
