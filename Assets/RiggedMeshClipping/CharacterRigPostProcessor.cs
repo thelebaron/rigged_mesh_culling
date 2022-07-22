@@ -15,12 +15,13 @@ public class CharacterRigPostProcessor : AssetPostprocessor
         //modelImporter.SearchAndRemapMaterials(ModelImporterMaterialName.BasedOnMaterialName, ModelImporterMaterialSearch.Everywhere);
         modelImporter.SaveAndReimport();
     }
+    
     void OnPostprocessModel(GameObject g)
     {
-        Apply(g.transform);
+        ApplyUVs(g.transform);
     }
 
-    void Apply(Transform t)
+    void ApplyUVs(Transform t)
     {
         // Delete maya rig controls
         if (t.name.Contains("_Ctrl_Reference"))
@@ -43,13 +44,13 @@ public class CharacterRigPostProcessor : AssetPostprocessor
             postProcessedUvs.UV3Modified = true;
         }
         
-        
-        if (t.name.ToLower().Contains("collider"))
-            t.gameObject.AddComponent<MeshCollider>();
+        // Dont know why this was here
+        /*if (t.name.ToLower().Contains("collider"))
+            t.gameObject.AddComponent<MeshCollider>();*/
                 
         // Recurse
         foreach (Transform child in t)
-            Apply(child);
+            ApplyUVs(child);
     }
 }
 #endif

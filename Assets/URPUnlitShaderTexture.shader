@@ -10,6 +10,8 @@ Shader "Example/URPUnlitShaderTexture"
         _Scale("Scale", Vector) = (1,1,1,0)
         _Radius("Radius", Float) = 0.01
         
+        
+        _DecalMap("Decal Map", 2D) = "red"
         //_Color("Color", Color) = (1,1,1,1)
         //_CutawayColor("Cutaway Color", Color) = (1,1,1,1)
     }
@@ -58,8 +60,10 @@ Shader "Example/URPUnlitShaderTexture"
 
             // This macro declares _BaseMap as a Texture2D object.
             TEXTURE2D(_BaseMap);
+            TEXTURE2D(_DecalMap);
             // This macro declares the sampler for the _BaseMap texture.
             SAMPLER(sampler_BaseMap);
+            SAMPLER(sampler_DecalMap);
 
             CBUFFER_START(UnityPerMaterial)
                 // The following line declares the _BaseMap_ST variable, so that you
@@ -86,7 +90,15 @@ Shader "Example/URPUnlitShaderTexture"
                 // sampler.
                 half4 color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, varyings.uv);
 
+                float3 decalUV = float3(0,1,1);
+                half4 decal = SAMPLE_TEXTURE2D(_DecalMap, sampler_DecalMap, varyings.uv);
+                float4 x = SAMPLE_TEXTURE2D(_DecalMap, sampler_DecalMap, decalUV.zy);
+                float4 y = SAMPLE_TEXTURE2D(_DecalMap, sampler_DecalMap, decalUV.xz);
+                float4 z = SAMPLE_TEXTURE2D(_DecalMap, sampler_DecalMap, decalUV.xy);
+                float4 output = x * 1 + y * 1 + z * 1;
 
+                color += output;
+                
                 float dist = length(_Position.xyz - varyings.texCoord3);
                 dist -= _Radius;
                 
