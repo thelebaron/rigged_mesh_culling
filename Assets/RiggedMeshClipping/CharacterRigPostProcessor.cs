@@ -40,7 +40,7 @@ public class CharacterRigPostProcessor : AssetPostprocessor
 
             skinnedMeshRenderer.sharedMesh = mesh;
 
-            var postProcessedUvs = t.gameObject.AddComponent<ModifiedRigUvs>();
+            var postProcessedUvs = t.gameObject.AddComponent<MeshHasBindPoseUv>();
             postProcessedUvs.UV3Modified = true;
         }
         
