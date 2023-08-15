@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Cut-Material-Temp
   m_Shader: {fileID: 4800000, guid: e2b5616c097e4fad901dd1638abdaba1, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -17,6 +19,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -37,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 206adb28e14acb0479ae315df5e1d743, type: 3}
+        m_Texture: {fileID: 2800000, guid: aef8e88835fb2a5488927db915bbf921, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -50,8 +53,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DecalMap:
         m_Texture: {fileID: 2800000, guid: 232900d0458074640959f071bddb8b3c, type: 3}
-        m_Scale: {x: 0.29, y: 0.29}
-        m_Offset: {x: 0.82, y: 0.3}
+        m_Scale: {x: 0.4, y: 0.4}
+        m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -73,6 +76,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MyArr:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -119,7 +126,7 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EllipsoidScale: 0.11
+    - _EllipsoidScale: 0.38
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -146,9 +153,9 @@ Material:
     - _DecalRotation: {r: 4.66, g: -5.67, b: -5.84, a: 0}
     - _EllipsoidCenter: {r: -0.23, g: -0.11, b: -0.04, a: 0}
     - _EllipsoidForward: {r: 0, g: 0, b: 0.5, a: 0}
-    - _EllipsoidPosition: {r: 0, g: 1.55, b: 0.43, a: 0}
+    - _EllipsoidPosition: {r: -0.18, g: 0.31, b: 0, a: 0}
     - _EllipsoidSide: {r: 0, g: 4, b: 0, a: 0}
-    - _EllipsoidUp: {r: 3, g: 0, b: 0, a: 0}
+    - _EllipsoidUp: {r: 3, g: 0, b: -0.55, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Forward: {r: 1, g: 1, b: 1, a: 0}
     - _Position: {r: 0.7, g: 1.68, b: 0.17, a: 0}

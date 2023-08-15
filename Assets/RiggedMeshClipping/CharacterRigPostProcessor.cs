@@ -33,10 +33,19 @@ public class CharacterRigPostProcessor : AssetPostprocessor
         {
             // Get the source mesh in its default pose
             var mesh = skinnedMeshRenderer.sharedMesh;
+            var vertices  = mesh.vertices;
             
             // https://forum.unity.com/threads/preskinned-bindpose-vertex-position.861220/#post-5697853
             // Set TEXCOORD3 to the object's vertex positions, thanks mr bgolus!
-            mesh.SetUVs(3, mesh.vertices);
+            
+            var uvs = new Vector3[mesh.vertices.Length];
+            for (int i = 0; i < mesh.vertices.Length; i++)
+            {
+                uvs[i] =  mesh.vertices[i];
+                uvs[i] *= 0.5f;
+            }
+            mesh.SetUVs(3, uvs);
+            mesh.SetVertices(vertices);
 
             skinnedMeshRenderer.sharedMesh = mesh;
 

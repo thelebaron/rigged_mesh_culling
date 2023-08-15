@@ -5,6 +5,7 @@ Shader "RiggedCulling/PixelCulling"
     // called Base Map.
     Properties
     {
+        _MyArr ("Tex", 2DArray) = "" {}
         _BaseMap("Base Map", 2D) = "white"
         _EllipsoidScale("Scale", Float) = 0.01
         
@@ -29,14 +30,9 @@ Shader "RiggedCulling/PixelCulling"
             #pragma vertex vert
             #pragma fragment frag
             
-            float4 _BaseColor;
-            float3 _EllipsoidPosition;
-            float3 _EllipsoidSide;
-            float3 _EllipsoidUp;
-            float3 _EllipsoidForward;
+
             SamplerState sampler_DecalMap_point_clamp;
             
-            float _EllipsoidScale;
 
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "RetroFunctions.hlsl"
@@ -73,6 +69,13 @@ Shader "RiggedCulling/PixelCulling"
                 // suffix is necessary for the tiling and offset function to work.
                 float4 _BaseMap_ST;
                 float4 _DecalMap_ST;
+                float4 _BaseColor;
+            
+                float3 _EllipsoidPosition;
+                float3 _EllipsoidSide;
+                float3 _EllipsoidUp;
+                float3 _EllipsoidForward;
+                float _EllipsoidScale;
             CBUFFER_END
 
             Varyings vert(Attributes IN)
@@ -89,8 +92,8 @@ Shader "RiggedCulling/PixelCulling"
 
             half4 frag(Varyings varyings) : SV_Target
             {
-                half4 baseColor = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, varyings.texcoord0.xy);
-                baseColor = 0.0;
+                half4 baseColor = 0.0;
+                baseColor = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, varyings.texcoord0.xy);
                 // set basecolor to red
                 //baseColor.r = 1.0;
                 
@@ -102,12 +105,18 @@ Shader "RiggedCulling/PixelCulling"
 
                 // Determine the falloff
                 float vDistance = distance(vPreSkinnedPosition, vEllipsoidCenter);
+
+                // note large scale makes everything brighter - need to correlate scale to the actual decal scaling/tile size
                 float vScale = remap(_EllipsoidScale, 0, 1, -0.5, 1);
+
+                
                 float falloff = vDistance - vScale;
                 falloff = saturate(falloff);
                 falloff = 1.0 - falloff;
                 //falloff = pow(falloff, 2);
                 falloff = falloff - 0.1;
+                // invert the falloff
+                falloff = 1.0 - falloff;
                 //baseColor = falloff;
                 
                 // Subtract off ellipsoid center
@@ -137,8 +146,8 @@ Shader "RiggedCulling/PixelCulling"
                 
                 //spherical clipping
                 // old worldspace: float dist = length(_Scale.xyz * varyings.positionWS.xyz - _Position.xyz);
-                if (dist < _EllipsoidScale)
-                   clip(-1);
+                //if (dist < _EllipsoidScale)
+                   //clip(-1);
 
                 //float len = length(vEllipsoidCenter.xyz - varyings.positionCS.xyz);
                 //if (distB * 1 < _EllipsoidScale)
@@ -150,22 +159,42 @@ Shader "RiggedCulling/PixelCulling"
 
                 //decal += d;
 
-                float inverseFalloff = 1.0 - falloff;
                 //inverseFalloff = smoothstep(0,3,inverseFalloff);
                 // fade out decal according to falloff
-                decal = lerp(decal*2, half4(0,0,0,0), inverseFalloff);
+
+                
+                decal = lerp(decal, half4(0,0,0,0), falloff);
+                decal = smoothstep(0,1,decal);
+                decal *= 3.5;
+                if (decal.a > 0.2)
+                {
+
+                    clip(-1);
+                    //baseColor = float4(1,1,0,1);
+                }
                 
                 if(falloff>0.0)
                 {
-                    decal += baseColor;
+                    //decal += baseColor;
+                    
                 }
                 else
                 {
-                    decal = 0.0;
+                    //decal = 0.0;
                 }
 
+                if(decal.r > 0.1)
+                {
+                    baseColor = lerp(baseColor, decal, 0.75);
+                    //baseColor += decal;
+                }
                 
-                baseColor += decal;
+                if (decal.a > 0.2)
+                {
+
+                    //clip(-1);
+                    baseColor = float4(1,0,1,1);
+                }
                 
                 return baseColor;
             }

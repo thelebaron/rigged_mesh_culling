@@ -1,0 +1,959 @@
+fileFormatVersion: 2
+guid: 763fb4c0858aa2a47aa0f950d7eaa221
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 180
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 2
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Cultist_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_LeftMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_RightMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cultist_Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: cultist(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Guides
+      parentName: cultist(Clone)
+      position: {x: -0, y: 0, z: 0.050670657}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head
+      parentName: Cultist_Guides
+      position: {x: -0, y: 1.808523, z: -0.03505433}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hips
+      parentName: Cultist_Guides
+      position: {x: -0, y: 0.9444524, z: -0.11490059}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftArm
+      parentName: Cultist_Guides
+      position: {x: -0.26479042, y: 1.6295335, z: -0.15102747}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftFoot
+      parentName: Cultist_Guides
+      position: {x: -0.16463225, y: 0.08947547, z: -0.19182219}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftForeArm
+      parentName: Cultist_Guides
+      position: {x: -0.42630747, y: 1.3560567, z: -0.1897983}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftHand
+      parentName: Cultist_Guides
+      position: {x: -0.57176375, y: 1.0645043, z: -0.16912858}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftLeg
+      parentName: Cultist_Guides
+      position: {x: -0.17208429, y: 0.58099085, z: -0.15762395}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftShoulder
+      parentName: Cultist_Guides
+      position: {x: -0.105916165, y: 1.6055272, z: -0.09101143}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftToeBase
+      parentName: Cultist_Guides
+      position: {x: -0.15366536, y: 0.012374014, z: 0.043601453}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftUpLeg
+      parentName: Cultist_Guides
+      position: {x: -0.1433438, y: 0.9463347, z: -0.11712738}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Neck
+      parentName: Cultist_Guides
+      position: {x: -0, y: 1.7069345, z: -0.07460018}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Reference
+      parentName: Cultist_Guides
+      position: {x: -0, y: -0.00616817, z: -0.040454872}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightArm
+      parentName: Cultist_Guides
+      position: {x: 0.26479042, y: 1.6295335, z: -0.15102747}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightFoot
+      parentName: Cultist_Guides
+      position: {x: 0.16463225, y: 0.08947547, z: -0.19182219}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightForeArm
+      parentName: Cultist_Guides
+      position: {x: 0.42630747, y: 1.3560567, z: -0.1897983}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightHand
+      parentName: Cultist_Guides
+      position: {x: 0.57176375, y: 1.0645043, z: -0.16912858}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightLeg
+      parentName: Cultist_Guides
+      position: {x: 0.17208429, y: 0.58099085, z: -0.15762395}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightShoulder
+      parentName: Cultist_Guides
+      position: {x: 0.105916165, y: 1.6055272, z: -0.09101143}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightToeBase
+      parentName: Cultist_Guides
+      position: {x: 0.15366536, y: 0.012374014, z: 0.043601453}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightUpLeg
+      parentName: Cultist_Guides
+      position: {x: 0.1433438, y: 0.9463347, z: -0.11712738}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine
+      parentName: Cultist_Guides
+      position: {x: -0, y: 1.0677991, z: -0.11348118}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine1
+      parentName: Cultist_Guides
+      position: {x: -0, y: 1.2384593, z: -0.10816626}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine2
+      parentName: Cultist_Guides
+      position: {x: -0, y: 1.4091197, z: -0.10285134}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Reference
+      parentName: cultist(Clone)
+      position: {x: -0, y: -0.006168168, z: 0.010215783}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: cultist
+      parentName: cultist(Clone)
+      position: {x: -0.000000009536743, y: -1.4210854e-16, z: 0.018841693}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_Reference
+      parentName: cultist(Clone)
+      position: {x: -0, y: -0.006168168, z: 0.010215783}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_HipsEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: -0, y: 0.9525029, z: -0.0766725}
+      rotation: {x: 3.061617e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftAnkleEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: -0.14334382, y: 0.09103957, z: -0.18060218}
+      rotation: {x: 5.7831878e-18, y: -2.8399612e-16, z: -1.1606847e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightAnkleEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: 0.1433438, y: 0.09103957, z: -0.1805985}
+      rotation: {x: 2.2988432e-16, y: -9.402066e-17, z: 5.7645166e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftWristEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: -0.8689628, y: 1.6357014, z: -0.10746566}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightWristEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: 0.8689622, y: 1.6356982, z: -0.1074654}
+      rotation: {x: -1.2325952e-32, y: 6.123234e-17, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftKneeEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: -0.1433438, y: 0.5837996, z: -0.045520887}
+      rotation: {x: -5.551115e-17, y: 3.081488e-32, z: -2.4651903e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightKneeEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: 0.14334384, y: 0.5837996, z: -0.045517214}
+      rotation: {x: -6.660807e-17, y: 1.0707203e-16, z: 2.9351865e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftElbowEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: -0.54248524, y: 1.6357015, z: -0.10746551}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightElbowEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: 0.54248506, y: 1.6356981, z: -0.10746536}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_ChestOriginEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: -0, y: 1.0739672, z: -0.07302631}
+      rotation: {x: -9.367507e-17, y: -0, z: 1.2325952e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_ChestEndEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: -0.00000008106232, y: 1.6116967, z: -0.04744949}
+      rotation: {x: -3.469447e-17, y: -3.368207e-16, z: -8.7213265e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftFootEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: -0.14334399, y: 0.013938119, z: 0.055076744}
+      rotation: {x: 2.2365468e-32, y: -0, z: -1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightFootEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: 0.14336357, y: 0.013938119, z: 0.05508043}
+      rotation: {x: 2.2365468e-32, y: -0, z: -1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftShoulderEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: -0.26479042, y: 1.6357017, z: -0.107465535}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightShoulderEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: 0.26479, y: 1.6356982, z: -0.107465476}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_HeadEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: -0, y: 1.8146913, z: 0.008507607}
+      rotation: {x: 3.061617e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftHipEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: -0.1433438, y: 0.9525029, z: -0.0766725}
+      rotation: {x: 2.7755576e-17, y: -4.6734745e-18, z: -5.531407e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightHipEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: 0.1433438, y: 0.9525029, z: -0.0766725}
+      rotation: {x: 5.5065324e-17, y: -2.823404e-16, z: 8.3984435e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftHandThumbEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: -0.90896285, y: 1.6257014, z: -0.029465593}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightHandThumbEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: 0.9864002, y: 1.5902182, z: -0.009132275}
+      rotation: {x: 1.6306401e-16, y: -5.7245875e-17, z: -2.7755576e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightHandMiddleEffector
+      parentName: Cultist_Ctrl_Reference
+      position: {x: 1.0705901, y: 1.6128082, z: -0.09684125}
+      rotation: {x: 3.469447e-18, y: -9.2534915e-35, z: -2.6671373e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_Hips
+      parentName: Cultist_Ctrl_Reference
+      position: {x: -0, y: 0.95062053, z: -0.07444571}
+      rotation: {x: 3.061617e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftUpLeg
+      parentName: Cultist_Ctrl_Hips
+      position: {x: -0.1433438, y: 0.0018823242, z: -0.0022267913}
+      rotation: {x: 2.7755576e-17, y: -4.6734745e-18, z: -5.531407e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftLeg
+      parentName: Cultist_Ctrl_LeftUpLeg
+      position: {x: 1.7763568e-17, y: -0.36870334, z: 0.03115167}
+      rotation: {x: -5.551115e-17, y: 3.081488e-32, z: -2.4651903e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftFoot
+      parentName: Cultist_Ctrl_LeftLeg
+      position: {x: 3.5527136e-17, y: -0.49276, z: -0.13508126}
+      rotation: {x: 5.7831878e-18, y: -2.8399612e-16, z: -1.1606847e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftToeBase
+      parentName: Cultist_Ctrl_LeftFoot
+      position: {x: -0.00000015258789, y: -0.077101454, z: 0.23567894}
+      rotation: {x: 2.2365468e-32, y: -0, z: -1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightUpLeg
+      parentName: Cultist_Ctrl_Hips
+      position: {x: 0.1433438, y: 0.0018823242, z: -0.0022267913}
+      rotation: {x: 5.5065324e-17, y: -2.823404e-16, z: 8.3984435e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightLeg
+      parentName: Cultist_Ctrl_RightUpLeg
+      position: {x: 0.000000019073486, y: -0.36870334, z: 0.031155273}
+      rotation: {x: -6.660807e-17, y: 1.0707203e-16, z: 2.9351865e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightFoot
+      parentName: Cultist_Ctrl_RightLeg
+      position: {x: -0.000000009536743, y: -0.49276, z: -0.13508126}
+      rotation: {x: 2.2988432e-16, y: -9.402066e-17, z: 5.7645166e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightToeBase
+      parentName: Cultist_Ctrl_RightFoot
+      position: {x: 0.000019750594, y: -0.077101454, z: 0.23567894}
+      rotation: {x: 2.2365468e-32, y: -0, z: -1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_Spine
+      parentName: Cultist_Ctrl_Hips
+      position: {x: -0, y: 0.12334671, z: 0.0014194059}
+      rotation: {x: -9.367507e-17, y: -0, z: 1.2325952e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_Spine1
+      parentName: Cultist_Ctrl_Spine
+      position: {x: -0, y: 0.17066024, z: 0.008421984}
+      rotation: {x: -1.0408341e-17, y: -6.162976e-33, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_Spine2
+      parentName: Cultist_Ctrl_Spine1
+      position: {x: -0, y: 0.17066032, z: 0.0053149173}
+      rotation: {x: -3.469447e-17, y: -3.368207e-16, z: -8.7213265e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftShoulder
+      parentName: Cultist_Ctrl_Spine2
+      position: {x: -0.105916165, y: 0.19640747, z: 0.011839916}
+      rotation: {x: -3.469447e-18, y: 6.620384e-35, z: -1.9081958e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftArm
+      parentName: Cultist_Ctrl_LeftShoulder
+      position: {x: -0.15887424, y: 0.024006346, z: -0.06001604}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftForeArm
+      parentName: Cultist_Ctrl_LeftArm
+      position: {x: -0.27769443, y: 2.842171e-16, z: -1.7763568e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftHand
+      parentName: Cultist_Ctrl_LeftForeArm
+      position: {x: -0.32647747, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_LeftHandThumb1
+      parentName: Cultist_Ctrl_LeftHand
+      position: {x: -0.04, y: -0.01, z: 0.078}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightShoulder
+      parentName: Cultist_Ctrl_Spine2
+      position: {x: 0.105916, y: 0.19641021, z: 0.011839923}
+      rotation: {x: 1.3877788e-17, y: -8.326673e-17, z: -4.6837534e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightArm
+      parentName: Cultist_Ctrl_RightShoulder
+      position: {x: 0.15887399, y: 0.024000091, z: -0.060015995}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightForeArm
+      parentName: Cultist_Ctrl_RightArm
+      position: {x: 0.277695, y: 2.842171e-16, z: -1.7763568e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightHand
+      parentName: Cultist_Ctrl_RightForeArm
+      position: {x: 0.326477, y: -2.842171e-16, z: 0}
+      rotation: {x: -1.2325952e-32, y: 6.123234e-17, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightHandThumb1
+      parentName: Cultist_Ctrl_RightHand
+      position: {x: 0.04, y: -0.01, z: 0.077999994}
+      rotation: {x: -2.220446e-16, y: 1.110223e-16, z: -1.3877788e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightHandThumb2
+      parentName: Cultist_Ctrl_RightHandThumb1
+      position: {x: 0.022685012, y: -0.013829956, z: 0.010217289}
+      rotation: {x: -5.551115e-17, y: -8.673617e-18, z: -2.7755576e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightHandThumb3
+      parentName: Cultist_Ctrl_RightHandThumb2
+      position: {x: 0.025687942, y: -0.00875, z: 0.0065319994}
+      rotation: {x: 1.5959456e-16, y: 1.7347235e-17, z: -2.220446e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightHandThumb4
+      parentName: Cultist_Ctrl_RightHandThumb3
+      position: {x: 0.029065017, y: -0.012900085, z: 0.0035838902}
+      rotation: {x: 1.6306401e-16, y: -5.7245875e-17, z: -2.7755576e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightHandMiddle1
+      parentName: Cultist_Ctrl_RightHand
+      position: {x: 0.096671976, y: 0.014579925, z: 0.0030331993}
+      rotation: {x: -1.7347235e-18, y: 1.7347235e-17, z: -3.1712914e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightHandMiddle2
+      parentName: Cultist_Ctrl_RightHandMiddle1
+      position: {x: 0.042325974, y: -0.0031999205, z: 0.0019522953}
+      rotation: {x: 6.938894e-18, y: -1.3877788e-17, z: -2.3234453e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightHandMiddle3
+      parentName: Cultist_Ctrl_RightHandMiddle2
+      position: {x: 0.029440003, y: -0.00800003, z: 0.002116308}
+      rotation: {x: 1.7347235e-17, y: 6.938894e-18, z: -2.6020852e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_RightHandMiddle4
+      parentName: Cultist_Ctrl_RightHandMiddle3
+      position: {x: 0.03319, y: -0.02626999, z: 0.0035224913}
+      rotation: {x: 3.469447e-18, y: -9.2534915e-35, z: -2.6671373e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_Neck
+      parentName: Cultist_Ctrl_Spine2
+      position: {x: -0, y: 0.2978148, z: 0.028251158}
+      rotation: {x: -5.551115e-17, y: 7.464118e-17, z: 4.5286448e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Ctrl_Head
+      parentName: Cultist_Ctrl_Neck
+      position: {x: -0, y: 0.10158859, z: 0.039545856}
+      rotation: {x: 3.061617e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Hips
+      parentName: cultist(Clone)
+      position: {x: -0, y: 0.9444524, z: -0.06422993}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Spine
+      parentName: Cultist_Hips
+      position: {x: -0, y: 0.12334671, z: 0.0014194059}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Spine1
+      parentName: Cultist_Spine
+      position: {x: -0, y: 0.17066024, z: 0.008421984}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Spine2
+      parentName: Cultist_Spine1
+      position: {x: -0, y: 0.17066032, z: 0.0053149173}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Neck
+      parentName: Cultist_Spine2
+      position: {x: 1.3539284e-16, y: 0.2978148, z: 0.028251158}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_Head
+      parentName: Cultist_Neck
+      position: {x: 1.04649035e-16, y: 0.10158859, z: 0.039545856}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftShoulder
+      parentName: Cultist_Spine2
+      position: {x: -0.105916165, y: 0.19640747, z: 0.011839916}
+      rotation: {x: -5.57897e-10, y: 0.026200846, z: 0.010480319, w: 0.9996018}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftArm
+      parentName: Cultist_LeftShoulder
+      position: {x: -0.15887424, y: 0.024006346, z: -0.06001604}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftForeArm
+      parentName: Cultist_LeftArm
+      position: {x: -0.27769443, y: 2.842171e-16, z: -1.7763568e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftHand
+      parentName: Cultist_LeftForeArm
+      position: {x: -0.32647747, y: -2.842171e-16, z: 1.7763568e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftThumb1
+      parentName: Cultist_LeftHand
+      position: {x: -0.04, y: -0.01, z: 0.078}
+      rotation: {x: -0.16954277, y: 0.14666753, z: -0.17788875, w: 0.9581751}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftThumb2
+      parentName: Cultist_LeftThumb1
+      position: {x: -0.022684326, y: -0.013830109, z: 0.010217337}
+      rotation: {x: 0.00038196146, y: 0.050519705, z: 0.069230475, w: 0.99632066}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftThumb3
+      parentName: Cultist_LeftThumb2
+      position: {x: -0.025688628, y: -0.008756867, z: 0.006531999}
+      rotation: {x: -0.014121388, y: 0.026115967, z: -0.020524157, w: 0.9993484}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftThumb4
+      parentName: Cultist_LeftThumb3
+      position: {x: -0.029064864, y: -0.012899322, z: 0.0035838892}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftMiddle1
+      parentName: Cultist_LeftHand
+      position: {x: -0.096671596, y: 0.014579162, z: 0.0030332278}
+      rotation: {x: -0.0012758172, y: -0.0020172354, z: -0.030965652, w: 0.9995176}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftMiddle2
+      parentName: Cultist_LeftMiddle1
+      position: {x: -0.042328566, y: -0.0031985473, z: 0.0019523525}
+      rotation: {x: -0.0020360826, y: -0.0073763453, z: -0.05622866, w: 0.9983886}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftMiddle3
+      parentName: Cultist_LeftMiddle2
+      position: {x: -0.029437484, y: -0.008006591, z: 0.0021162985}
+      rotation: {x: -0.008993901, y: -0.010986444, z: -0.16666892, w: 0.9859107}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftMiddle4
+      parentName: Cultist_LeftMiddle3
+      position: {x: -0.03318863, y: -0.026267089, z: 0.0035224247}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightShoulder
+      parentName: Cultist_Spine2
+      position: {x: 0.105916, y: 0.19641021, z: 0.011839923}
+      rotation: {x: 0.99960196, y: -0.010475634, z: 0.026195886, w: -5.57788e-10}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightArm
+      parentName: Cultist_RightShoulder
+      position: {x: 0.15887399, y: -0.024000091, z: 0.060015995}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightForeArm
+      parentName: Cultist_RightArm
+      position: {x: 0.277695, y: 2.842171e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightHand
+      parentName: Cultist_RightForeArm
+      position: {x: 0.326477, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightThumb1
+      parentName: Cultist_RightHand
+      position: {x: 0.04, y: 0.01, z: -0.077999994}
+      rotation: {x: -0.16953903, y: 0.14667341, z: -0.17788723, w: 0.9581751}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightThumb2
+      parentName: Cultist_RightThumb1
+      position: {x: 0.022685012, y: 0.013829956, z: -0.010217289}
+      rotation: {x: 0.00041422248, y: 0.05053577, z: 0.06932438, w: 0.9963133}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightThumb3
+      parentName: Cultist_RightThumb2
+      position: {x: 0.025687942, y: 0.00875, z: -0.0065319994}
+      rotation: {x: -0.01414873, y: 0.026152756, z: -0.020608978, w: 0.99934536}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightThumb4
+      parentName: Cultist_RightThumb3
+      position: {x: 0.029065017, y: 0.012900085, z: -0.0035838902}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightMiddle1
+      parentName: Cultist_RightHand
+      position: {x: 0.096671976, y: -0.014579925, z: -0.0030331993}
+      rotation: {x: -0.0012767919, y: -0.002018629, z: -0.030989807, w: 0.99951684}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightMiddle2
+      parentName: Cultist_RightMiddle1
+      position: {x: 0.042325974, y: 0.0031999205, z: -0.0019522953}
+      rotation: {x: -0.0020302357, y: -0.0073668165, z: -0.056090463, w: 0.9983965}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightMiddle3
+      parentName: Cultist_RightMiddle2
+      position: {x: 0.029440003, y: 0.00800003, z: -0.002116308}
+      rotation: {x: -0.0090043135, y: -0.010990367, z: -0.16680516, w: 0.9858876}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightMiddle4
+      parentName: Cultist_RightMiddle3
+      position: {x: 0.03319, y: 0.02626999, z: -0.0035224913}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftUpLeg
+      parentName: Cultist_Hips
+      position: {x: -0.1433438, y: 0.0018823242, z: -0.0022267913}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftLeg
+      parentName: Cultist_LeftUpLeg
+      position: {x: -0.000000009536743, y: -0.36870334, z: 0.03115163}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftFoot
+      parentName: Cultist_LeftLeg
+      position: {x: -0.000000009536743, y: -0.49276, z: -0.13508132}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_LeftToeBase
+      parentName: Cultist_LeftFoot
+      position: {x: -0.00000015258789, y: -0.077101454, z: 0.23567894}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightUpLeg
+      parentName: Cultist_Hips
+      position: {x: 0.1433438, y: 0.0018823242, z: -0.0022267913}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightLeg
+      parentName: Cultist_RightUpLeg
+      position: {x: 0.000000019073486, y: -0.36870334, z: 0.031155268}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightFoot
+      parentName: Cultist_RightLeg
+      position: {x: 0.0000000031788865, y: -0.49276, z: -0.13508125}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cultist_RightToeBase
+      parentName: Cultist_RightFoot
+      position: {x: 0.000019750594, y: -0.077101454, z: 0.23567894}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
