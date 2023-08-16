@@ -31,10 +31,8 @@ Shader "RiggedCulling/PixelCulling_Previous"
             #pragma vertex vert
             #pragma fragment frag
             
-
             SamplerState sampler_DecalMap_point_clamp;
             
-
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "RetroFunctions.hlsl"
 
@@ -98,8 +96,6 @@ Shader "RiggedCulling/PixelCulling_Previous"
                 
                 half3 vPreSkinnedPosition = varyings.texcoord3.xyz;
                 half3 vEllipsoidCenter = _EllipsoidCenter;
-
-                
                 // Subtract off ellipsoid center
                 half3 vLocalPosition = ( vPreSkinnedPosition.xyz - _EllipsoidCenter.xyz );
                 half3 vEllipsoidPosition;
@@ -117,9 +113,6 @@ Shader "RiggedCulling/PixelCulling_Previous"
                 half2 vTexcoord = vEllipsoidPosition.xy;// - float2(1.25,-0.75); // offset as model sits outside of 0-1 range
                 // also note model is posed with arms at 45 degrees to the ground, so at the arms the effect is wonky
                 
-                
-
-        
                 float dist = length(vEllipsoidCenter.xyz - varyings.texcoord3);
                 dist -= _Falloff;
                 
@@ -136,7 +129,7 @@ Shader "RiggedCulling/PixelCulling_Previous"
                 float vScale = remap(_Falloff, 0, 1, -0.5, 1);
                 
                 // Determine the falloff
-                float vDistance = distance(vPreSkinnedPosition, vEllipsoidCenter);
+                float vDistance = distance(vPreSkinnedPosition, _EllipsoidCenter);
                 float falloff = vDistance - vScale;
                 
                 falloff = saturate(falloff);
@@ -158,15 +151,6 @@ Shader "RiggedCulling/PixelCulling_Previous"
                     clip(-1);
                 }
                 
-                if(falloff>0.0)
-                {
-                    //decal += baseColor;
-                }
-                else
-                {
-                    //decal = 0.0;
-                }
-
                 if(decal.r > 0.1)
                 {
                     // darken it.

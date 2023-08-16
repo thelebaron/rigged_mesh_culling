@@ -1,5 +1,5 @@
 ﻿// This shader draws a texture on the mesh.
-Shader "RiggedCulling/PixelCulling"
+Shader "RiggedCulling/PixelCulling_V2"
 {
     // The _BaseMap variable is visible in the Material's Inspector, as a field
     // called Base Map.
@@ -31,10 +31,8 @@ Shader "RiggedCulling/PixelCulling"
             #pragma vertex vert
             #pragma fragment frag
             
-
             SamplerState sampler_DecalMap_point_clamp;
             
-
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "RetroFunctions.hlsl"
 
@@ -94,35 +92,66 @@ Shader "RiggedCulling/PixelCulling"
             half4 frag(Varyings varyings) : SV_Target
             {
                 half4 baseColor = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, varyings.texcoord0.xy);
-
-                // Calculate ellipsoid position
-                float3 vLocalPosition = varyings.texcoord3.xyz - _EllipsoidCenter;
-                float3 vEllipsoidPosition;
-                vEllipsoidPosition.x = dot(_EllipsoidSide.xyz, vLocalPosition.xyz);
-                vEllipsoidPosition.y = dot(_EllipsoidUp.xyz, vLocalPosition.xyz);
-                vEllipsoidPosition.z = dot(_EllipsoidForward.xyz, vLocalPosition.xyz);
-
-                // Calculate falloff and adjust decal
-                float vDistance = length(vLocalPosition);
-                float falloff = vDistance - _Falloff;
+                
+                half3 vPreSkinnedPosition = varyings.texcoord3.xyz;
+                // Subtract off ellipsoid center
+                half3 vLocalPosition = ( vPreSkinnedPosition.xyz - _EllipsoidCenter.xyz );
+                half3 vEllipsoidPosition = 0;
+                
+                // Apply rotation and ellipsoid scale. Ellipsoid basis is the orthonormal basis
+                // of the ellipsoid divided by the per-axis ellipsoid size.
+                vEllipsoidPosition.x = dot( _EllipsoidSide.xyz, vLocalPosition.xyz );
+                vEllipsoidPosition.y = dot( _EllipsoidUp.xyz, vLocalPosition.xyz );
+                vEllipsoidPosition.z = dot( _EllipsoidForward.xyz, vLocalPosition.xyz );
+                
+                // Use the length of the position in ellipsoid space as input to texkill/clip
+                // 
+                float texkillInput = length( vEllipsoidPosition.xyz ); 
+                clip( texkillInput );
+                
+                //return baseColor;
+                
+                // We use the xy of the position in ellipsoid space as the texture uv
+                // offset decal so it shows on the center of the model
+                half2 texcoordOffset = float2(-1.25,0.5);
+                half2 vTexcoord = vEllipsoidPosition.xy - texcoordOffset; 
+                
+                // Determine the falloff
+                float vDistance = distance(vPreSkinnedPosition, _EllipsoidCenter);
+                float falloff = vDistance - remap(_Falloff, 0, 1, -0.5, 1);
+                
                 falloff = saturate(falloff);
                 falloff = 1.0 - falloff;
-
-                // Sample decal texture
-                float2 vTexcoord = vEllipsoidPosition.xy;
-                half4 decal = SAMPLE_TEXTURE2D(_DecalMap, sampler_DecalMap_point_clamp, TRANSFORM_TEX(vTexcoord, _DecalMap));
-
-                // Apply falloff to decal
-                decal *= falloff;
-                decal = smoothstep(0, 1, decal);
+                falloff = falloff - 0.1;
+                // invert the falloff
+                falloff = 1.0 - falloff;
+                
+                // fade out decal according to falloff
+                half4 decalTex = SAMPLE_TEXTURE2D(_DecalMap, sampler_DecalMap_point_clamp,  TRANSFORM_TEX(vTexcoord, _DecalMap));
+                half4 decal = decalTex;
+                
+                decal = lerp(decal, 0, falloff);
+                decal = smoothstep(0,1,decal);
                 decal *= 3.5;
+
+                float zDistance = vEllipsoidPosition.z;  // Extract the z-distance from the position in ellipsoid space
+                // compare distance
+                
+                
                 if (decal.a > 0.2)
                 {
                     clip(-1);
+                    clip(zDistance);
                 }
-                // Apply decal to base color
-                baseColor = lerp(baseColor, decal, 0.75);
-
+                
+                if(decal.r > 0.1)
+                {
+                    // darken it only because our test texture is too light
+                    decalTex *= 0.4;
+                    // lerp to the original texture
+                    baseColor = lerp(baseColor, decalTex, 1);
+                }
+                
                 return baseColor;
             }
             ENDHLSL
