@@ -7553,12 +7553,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3e5a2dce418dc4fb876f3555e0d39b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ellipsoidPosition: {x: 0, y: 0, z: 0}
-  ellipsoidSide: {x: 3, y: 0, z: 0}
-  ellipsoidUp: {x: 0, y: 3, z: 0}
-  ellipsoidForward: {x: 0, y: 0, z: 3}
+  ellipsoidPosition: {x: 0, y: 0.22, z: 1.71}
+  ellipsoidSide: {x: 4, y: 0, z: 0}
+  ellipsoidUp: {x: 0, y: 4, z: 0}
+  ellipsoidForward: {x: 0, y: 0, z: 4}
   ellipsoidScale: 1
-  falloff: 0.75
+  falloff: 0.965
   material: {fileID: 2100000, guid: 5d7a8427c1e558d4bbd62f5fca622bc6, type: 2}
 --- !u!114 &2255055479679177096
 MonoBehaviour:

@@ -118,7 +118,7 @@ Shader "RiggedCulling/PixelCulling_V2"
                 
                 // Determine the falloff
                 float vDistance = distance(vPreSkinnedPosition, _EllipsoidCenter);
-                float falloff = vDistance - remap(_Falloff, 0, 1, -0.5, 1);
+                float falloff = vDistance - _Falloff;//remap(_Falloff, 0, 1, -0.5, 1);
                 
                 falloff = saturate(falloff);
                 falloff = 1.0 - falloff;
@@ -131,7 +131,7 @@ Shader "RiggedCulling/PixelCulling_V2"
                 half4 decal = decalTex;
                 
                 decal = lerp(decal, 0, falloff);
-                decal = smoothstep(0,1,decal);
+                //decal = smoothstep(0,1,decal);
                 decal *= 3.5;
 
                 float zDistance = vEllipsoidPosition.z;  // Extract the z-distance from the position in ellipsoid space
@@ -141,7 +141,7 @@ Shader "RiggedCulling/PixelCulling_V2"
                 if (decal.a > 0.2)
                 {
                     clip(-1);
-                    clip(zDistance);
+                    //clip(zDistance);
                 }
                 
                 if(decal.r > 0.1)

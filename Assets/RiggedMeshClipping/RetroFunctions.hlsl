@@ -43,6 +43,11 @@ inline float remap(float x, float in_min, float in_max,
     return lerp(out_min, out_max, t);
 }
 
+half3 quadraticlerp(half3 start, half3 end, float value)
+{
+    return start * (1 - value * value) + end * (value * value); // Quadratic interpolation
+}
+
 inline float remap_clamp(float x, float in_min, float in_max,
                          float out_min, float out_max)
 {
