@@ -168,15 +168,12 @@ Shader "RiggedCulling/PixelCulling"
                 decal *= 3.5;
                 if (decal.a > 0.2)
                 {
-
                     clip(-1);
-                    //baseColor = float4(1,1,0,1);
                 }
                 
                 if(falloff>0.0)
                 {
                     //decal += baseColor;
-                    
                 }
                 else
                 {
@@ -191,7 +188,6 @@ Shader "RiggedCulling/PixelCulling"
                 
                 if (decal.a > 0.2)
                 {
-
                     //clip(-1);
                     baseColor = float4(1,0,1,1);
                 }

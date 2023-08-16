@@ -10,6 +10,7 @@ public class EllipsoidShaderController : MonoBehaviour
     public Vector3 ellipsoidUp       = Vector3.up;
     public Vector3 ellipsoidForward  = Vector3.forward;
     public float   ellipsoidScale    = 0.01f;
+    public float   falloff = 0.01f;
 
     public Material material;
 
@@ -28,18 +29,28 @@ public class EllipsoidShaderController : MonoBehaviour
     {
         if (material)
         {
+            
             material.SetVector("_EllipsoidPosition", ellipsoidPosition);
-            material.SetVector("_EllipsoidSide", ellipsoidSide);
-            material.SetVector("_EllipsoidUp", ellipsoidUp);
-            material.SetVector("_EllipsoidForward", ellipsoidForward);
-            material.SetFloat("_EllipsoidScale", ellipsoidScale);
+            material.SetVector("_EllipsoidSide", ellipsoidSide * ellipsoidScale);
+            material.SetVector("_EllipsoidUp", ellipsoidUp * ellipsoidScale);
+            material.SetVector("_EllipsoidForward", ellipsoidForward * ellipsoidScale);
+            material.SetFloat("_EllipsoidScale", falloff);
         }
+    }
+    
+    public void AdjustSize(float newSize) {
+        ellipsoidScale   =  newSize;
+        ellipsoidSide    *= newSize;
+        ellipsoidUp      *= newSize;
+        ellipsoidForward *= newSize;
     }
     
     // Gizmos for the editor
     private void OnDrawGizmosSelected()
     {
+        var mesh = new Mesh();
+        EllipsoidMesh.GenerateMesh(mesh, ellipsoidPosition, ellipsoidSide, ellipsoidUp, ellipsoidForward);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.TransformPoint(ellipsoidPosition), ellipsoidScale * Mathf.Max(ellipsoidSide.x, ellipsoidSide.y, ellipsoidSide.z));
+        Gizmos.DrawWireMesh(mesh, ellipsoidPosition, Quaternion.identity, Vector3.one);
     }
 }
