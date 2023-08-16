@@ -10,6 +10,8 @@ public class EllipsoidShaderController : MonoBehaviour
     public Vector3 ellipsoidUp       = Vector3.up;
     public Vector3 ellipsoidForward  = Vector3.forward;
     public float   ellipsoidScale    = 0.01f;
+    // range
+    [Range(0.0f, 1.0f)]
     public float   falloff = 0.01f;
 
     public Material material;
@@ -29,12 +31,11 @@ public class EllipsoidShaderController : MonoBehaviour
     {
         if (material)
         {
-            
-            material.SetVector("_EllipsoidPosition", ellipsoidPosition);
-            material.SetVector("_EllipsoidSide", ellipsoidSide * ellipsoidScale);
-            material.SetVector("_EllipsoidUp", ellipsoidUp * ellipsoidScale);
-            material.SetVector("_EllipsoidForward", ellipsoidForward * ellipsoidScale);
-            material.SetFloat("_EllipsoidScale", falloff);
+            material.SetVector("_EllipsoidCenter", ellipsoidPosition);
+            material.SetVector("_EllipsoidSide", ellipsoidSide); // * ellipsoidScale);
+            material.SetVector("_EllipsoidUp", ellipsoidUp); // * ellipsoidScale); //
+            material.SetVector("_EllipsoidForward", ellipsoidForward); // * ellipsoidScale);
+            material.SetFloat("_Falloff", falloff);
         }
     }
     

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Cut-Material-Temp
-  m_Shader: {fileID: 4800000, guid: e2b5616c097e4fad901dd1638abdaba1, type: 3}
+  m_Shader: {fileID: 4800000, guid: 78ddbda34046f7843bf3744083269394, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -126,8 +126,9 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EllipsoidScale: 1
+    - _EllipsoidScale: 2.28
     - _EnvironmentReflections: 1
+    - _Falloff: 0.857
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -138,6 +139,7 @@ Material:
     - _QueueOffset: 0
     - _Radius: 0.06
     - _ReceiveShadows: 1
+    - _Scale: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -151,11 +153,11 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DecalCenter: {r: 0.74, g: -0.99, b: 0, a: 0}
     - _DecalRotation: {r: 4.66, g: -5.67, b: -5.84, a: 0}
-    - _EllipsoidCenter: {r: 0.24, g: 0.56, b: -0.45, a: 0}
-    - _EllipsoidForward: {r: 0, g: 0, b: 1, a: 0}
-    - _EllipsoidPosition: {r: -1.15, g: 0.39, b: -0.63, a: 0}
-    - _EllipsoidSide: {r: 1.62, g: 0.13, b: 0.86, a: 0}
-    - _EllipsoidUp: {r: 0, g: 1, b: 0, a: 0}
+    - _EllipsoidCenter: {r: -0.51, g: -0.05, b: 0.49, a: 0}
+    - _EllipsoidForward: {r: 0, g: 0, b: 3, a: 0}
+    - _EllipsoidPosition: {r: -1.09, g: 0.39, b: -0.63, a: 0}
+    - _EllipsoidSide: {r: 3, g: 0, b: 0, a: 0}
+    - _EllipsoidUp: {r: 0, g: 3, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Forward: {r: 1, g: 1, b: 1, a: 0}
     - _Position: {r: 0.7, g: 1.68, b: 0.17, a: 0}

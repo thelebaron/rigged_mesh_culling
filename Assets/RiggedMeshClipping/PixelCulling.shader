@@ -7,12 +7,13 @@ Shader "RiggedCulling/PixelCulling"
     {
         _MyArr ("Tex", 2DArray) = "" {}
         _BaseMap("Base Map", 2D) = "white"
-        _EllipsoidScale("Scale", Float) = 0.01
         
-        _EllipsoidPosition("EllipsoidPosition", Vector) = (0,0,0,0)
-        _EllipsoidSide("EllipsoidSide", Vector) = (0,0,0,0)
-        _EllipsoidUp("EllipsoidUp", Vector) = (0,0,0,0)
-        _EllipsoidForward("EllipsoidForward", Vector) = (0,0,0,0)
+        _EllipsoidCenter("EllipsoidPosition", Vector) = (1,1,1,0)
+        _EllipsoidSide("EllipsoidSide", Vector) = (1,0,0,0)
+        _EllipsoidUp("EllipsoidUp", Vector) = (0,1,0,0)
+        _EllipsoidForward("EllipsoidForward", Vector) = (0,0,1,0)
+        _Falloff("Falloff", Float) = 1.0
+        _Scale("Scale", Float) = 1.0
         
         _DecalMap("Decal Map", 2D) = "red"
     }
@@ -71,11 +72,11 @@ Shader "RiggedCulling/PixelCulling"
                 float4 _DecalMap_ST;
                 float4 _BaseColor;
             
-                float3 _EllipsoidPosition;
+                float3 _EllipsoidCenter;
                 float3 _EllipsoidSide;
                 float3 _EllipsoidUp;
                 float3 _EllipsoidForward;
-                float _EllipsoidScale;
+                float _Falloff;
             CBUFFER_END
 
             Varyings vert(Attributes IN)
@@ -92,106 +93,36 @@ Shader "RiggedCulling/PixelCulling"
 
             half4 frag(Varyings varyings) : SV_Target
             {
-                half4 baseColor = 0.0;
-                baseColor = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, varyings.texcoord0.xy);
-                // set basecolor to red
-                //baseColor.r = 1.0;
-                
-                float3 vPreSkinnedPosition = varyings.texcoord3.xyz;
-                float3 vEllipsoidCenter = _EllipsoidPosition;
-                float3 vEllipsoidSide = _EllipsoidSide;
-                float3 vEllipsoidUp = _EllipsoidUp;
-                float3 vEllipsoidForward = _EllipsoidForward;
+                half4 baseColor = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, varyings.texcoord0.xy);
 
-                // Determine the falloff
-                float vDistance = distance(vPreSkinnedPosition, vEllipsoidCenter);
+                // Calculate ellipsoid position
+                float3 vLocalPosition = varyings.texcoord3.xyz - _EllipsoidCenter;
+                float3 vEllipsoidPosition;
+                vEllipsoidPosition.x = dot(_EllipsoidSide.xyz, vLocalPosition.xyz);
+                vEllipsoidPosition.y = dot(_EllipsoidUp.xyz, vLocalPosition.xyz);
+                vEllipsoidPosition.z = dot(_EllipsoidForward.xyz, vLocalPosition.xyz);
 
-                // note large scale makes everything brighter - need to correlate scale to the actual decal scaling/tile size
-                float vScale = remap(_EllipsoidScale, 0, 1, -0.5, 1);
-
-                
-                float falloff = vDistance - vScale;
+                // Calculate falloff and adjust decal
+                float vDistance = length(vLocalPosition);
+                float falloff = vDistance - _Falloff;
                 falloff = saturate(falloff);
                 falloff = 1.0 - falloff;
-                //falloff = pow(falloff, 2);
-                falloff = falloff - 0.1;
-                // invert the falloff
-                falloff = 1.0 - falloff;
-                //baseColor = falloff;
-                
-                // Subtract off ellipsoid center
-                float3 vLocalPosition = ( vPreSkinnedPosition.xyz - vEllipsoidCenter.xyz );
-                float3 vEllipsoidPosition;
-                
-                // Apply rotation and ellipsoid scale. Ellipsoid basis is the orthonormal basis
-                // of the ellipsoid divided by the per-axis ellipsoid size.
-                vEllipsoidPosition.x = dot( vEllipsoidSide.xyz, vLocalPosition.xyz );
-                vEllipsoidPosition.y = dot( vEllipsoidUp.xyz, vLocalPosition.xyz );
-                vEllipsoidPosition.z = dot( vEllipsoidForward.xyz, vLocalPosition.xyz );
-                
-                // Use the length of the position in ellipsoid space as input to texkill/clip
-                float fTexkillInput = length( vEllipsoidPosition ); 
-                clip( fTexkillInput );
-                // We use the xy of the position in ellipsoid space as the texture uv
-                float2 vTexcoord = vEllipsoidPosition.xy - float2(1.25,-0.75); // offset as model sits outside of 0-1 range
-                // also note model is posed with arms at 45 degrees to the ground, so at the arms the effect is wonky
-                
-                
 
-                half4 decal = SAMPLE_TEXTURE2D(_DecalMap, sampler_DecalMap_point_clamp,  TRANSFORM_TEX(vTexcoord, _DecalMap));
-               
-                
-                float dist = length(vEllipsoidCenter.xyz - varyings.texcoord3);
-                dist -= _EllipsoidScale;
-                
-                //spherical clipping
-                // old worldspace: float dist = length(_Scale.xyz * varyings.positionWS.xyz - _Position.xyz);
-                //if (dist < _EllipsoidScale)
-                   //clip(-1);
+                // Sample decal texture
+                float2 vTexcoord = vEllipsoidPosition.xy;
+                half4 decal = SAMPLE_TEXTURE2D(_DecalMap, sampler_DecalMap_point_clamp, TRANSFORM_TEX(vTexcoord, _DecalMap));
 
-                //float len = length(vEllipsoidCenter.xyz - varyings.positionCS.xyz);
-                //if (distB * 1 < _EllipsoidScale)
-
-                
-                
-                float3 position = varyings.positionWS.xyz;//glModelViewMatrix * gl_Vertex;
-                float d = distance(position, vEllipsoidCenter.xyz + position);//distance(positionWS, worldSpaceCameraPos);
-
-                //decal += d;
-
-                //inverseFalloff = smoothstep(0,3,inverseFalloff);
-                // fade out decal according to falloff
-
-                
-                decal = lerp(decal, half4(0,0,0,0), falloff);
-                decal = smoothstep(0,1,decal);
+                // Apply falloff to decal
+                decal *= falloff;
+                decal = smoothstep(0, 1, decal);
                 decal *= 3.5;
                 if (decal.a > 0.2)
                 {
                     clip(-1);
                 }
-                
-                if(falloff>0.0)
-                {
-                    //decal += baseColor;
-                }
-                else
-                {
-                    //decal = 0.0;
-                }
+                // Apply decal to base color
+                baseColor = lerp(baseColor, decal, 0.75);
 
-                if(decal.r > 0.1)
-                {
-                    baseColor = lerp(baseColor, decal, 0.75);
-                    //baseColor += decal;
-                }
-                
-                if (decal.a > 0.2)
-                {
-                    //clip(-1);
-                    baseColor = float4(1,0,1,1);
-                }
-                
                 return baseColor;
             }
             ENDHLSL

@@ -13,6 +13,7 @@ public class EllipsoidMesh : MonoBehaviour
     public Vector3 center = Vector3.zero; // Center of the ellipsoid
     public Vector3 sideVector = Vector3.right; // Vector defining the side of the ellipsoid
     public Vector3 upVector = Vector3.up; // Vector defining the up direction of the ellipsoid
+    public Vector3 forwardVector = Vector3.forward; // Vector defining the forward direction of the ellipsoid
 
     private MeshFilter meshFilter;
     private GameObject meshObject;
@@ -45,7 +46,7 @@ public class EllipsoidMesh : MonoBehaviour
         List<int> triangles = new List<int>();
         List<Vector3> normals = new List<Vector3>();
 
-        Vector3 forwardVector = Vector3.Cross(sideVector, upVector).normalized;
+        //Vector3 forwardVector = Vector3.Cross(sideVector, upVector).normalized;
 
         for (int i = 0; i <= resolution; i++)
         {
@@ -67,7 +68,6 @@ public class EllipsoidMesh : MonoBehaviour
                 vEllipsoidPosition.y = dot( vEllipsoidUp.xyz, vLocalPosition.xyz );
                 vEllipsoidPosition.z = dot( vEllipsoidForward.xyz, vLocalPosition.xyz );*/
                 
-                
                 Vector3 dir = sideVector * Mathf.Sin(theta) * Mathf.Cos(phi)
                             + upVector * Mathf.Cos(theta)
                             + forwardVector * Mathf.Sin(theta) * Mathf.Sin(phi);
@@ -76,10 +76,7 @@ public class EllipsoidMesh : MonoBehaviour
                 float x = center.x + dir.x * scale.x;
                 float y = center.y + dir.y * scale.y;
                 float z = center.z + dir.z * scale.z;
-
-                Vector3 point = new Vector3(x, y, z);
-                
-                
+                var point = new Vector3(x, y, z);
                 
                 vertices.Add(point);
                 normals.Add(dir.normalized);
