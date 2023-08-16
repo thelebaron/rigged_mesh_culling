@@ -7525,6 +7525,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5629786143314380668, guid: b83d7eec35e77934a8a6444da27612b9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9777b2b710f5a454cbc1173c46400a3b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7553,7 +7557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3e5a2dce418dc4fb876f3555e0d39b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ellipsoidPosition: {x: 0, y: 0.22, z: 1.71}
+  ellipsoidPosition: {x: 0, y: 0.17, z: 1.71}
   ellipsoidSide: {x: 4, y: 0, z: 0}
   ellipsoidUp: {x: 0, y: 4, z: 0}
   ellipsoidForward: {x: 0, y: 0, z: 4}

@@ -19,7 +19,7 @@ public class EllipsoidShaderController : MonoBehaviour
     private void Start()
     {
         // Make sure the material has the correct shader
-        if (material.shader.name != "RiggedCulling/PixelCulling")
+        if (material.shader.name != "RiggedCulling/PixelCulling_V2")
         {
             Debug.LogError("This script requires the 'RiggedCulling/PixelCulling' shader.");
             enabled = false;
