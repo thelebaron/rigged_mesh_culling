@@ -94,22 +94,7 @@ Shader "RiggedCulling/PixelCulling_V2"
                 half4 baseColor = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, varyings.texcoord0.xy);
                 
                 half3 vPreSkinnedPosition = varyings.texcoord3.xyz;
-                // Subtract off ellipsoid center
-                half3 vLocalPosition = ( vPreSkinnedPosition.xyz - _EllipsoidCenter.xyz );
-                half3 vEllipsoidPosition = 0;
-                
-                // Apply rotation and ellipsoid scale. Ellipsoid basis is the orthonormal basis
-                // of the ellipsoid divided by the per-axis ellipsoid size.
-                vEllipsoidPosition.x = dot( _EllipsoidSide.xyz, vLocalPosition.xyz );
-                vEllipsoidPosition.y = dot( _EllipsoidUp.xyz, vLocalPosition.xyz );
-                vEllipsoidPosition.z = dot( _EllipsoidForward.xyz, vLocalPosition.xyz );
-                
-                // Use the length of the position in ellipsoid space as input to texkill/clip
-                // 
-                float texkillInput = length( vEllipsoidPosition.xyz ); 
-                clip( texkillInput );
-                
-                //return baseColor;
+                half3 vEllipsoidPosition = ellipsoidposition(_EllipsoidCenter, _EllipsoidSide, _EllipsoidUp, _EllipsoidForward, varyings.texcoord3);
                 
                 // We use the xy of the position in ellipsoid space as the texture uv
                 // offset decal so it shows on the center of the model
@@ -133,16 +118,9 @@ Shader "RiggedCulling/PixelCulling_V2"
                 decal = lerp(decal, 0, falloff);
                 //decal = smoothstep(0,1,decal);
                 decal *= 3.5;
-
-                float zDistance = vEllipsoidPosition.z;  // Extract the z-distance from the position in ellipsoid space
-                // compare distance
-                
                 
                 if (decal.a > 0.2)
-                {
                     clip(-1);
-                    //clip(zDistance);
-                }
                 
                 if(decal.r > 0.1)
                 {

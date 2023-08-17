@@ -48,6 +48,30 @@ half3 quadraticlerp(half3 start, half3 end, float value)
     return start * (1 - value * value) + end * (value * value); // Quadratic interpolation
 }
 
+// ellipsoid for preskinned bindpose position on a mesh
+// see L4D gdc presentations for more info
+half3 ellipsoidposition(half3 center, half3 side, half3 up, half3 forward, half4 bindposition)
+{
+    half3 vPreSkinnedPosition = bindposition.xyz;
+    
+    // Subtract off ellipsoid center
+    half3 vLocalPosition = vPreSkinnedPosition - center;
+    half3 vEllipsoidPosition = 0;
+    
+    // Apply rotation and ellipsoid scale. Ellipsoid basis is the orthonormal basis
+    // of the ellipsoid divided by the per-axis ellipsoid size.
+    vEllipsoidPosition.x = dot( side.xyz, vLocalPosition.xyz );
+    vEllipsoidPosition.y = dot( up.xyz, vLocalPosition.xyz );
+    vEllipsoidPosition.z = dot( forward.xyz, vLocalPosition.xyz );
+    
+    // Use the length of the position in ellipsoid space as input to texkill/clip
+    // 
+    float texkillInput = length( vEllipsoidPosition.xyz ); 
+    clip( texkillInput );
+    
+    return vEllipsoidPosition;
+}
+
 inline float remap_clamp(float x, float in_min, float in_max,
                          float out_min, float out_max)
 {
