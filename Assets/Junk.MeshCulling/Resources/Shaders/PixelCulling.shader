@@ -39,6 +39,8 @@ Shader "RiggedCulling/PixelCulling_V2"
             struct Attributes
             {
                 float4 positionOS   : POSITION;
+                float3 normalOS : NORMAL;
+                float3 color : COLOR;
                 // The uv variable contains the UV coordinate on the texture for the
                 // given vertex.
                 float4 uv0          : TEXCOORD0;
@@ -80,12 +82,27 @@ Shader "RiggedCulling/PixelCulling_V2"
             Varyings vert(Attributes IN)
             {
                 Varyings varyings;
-                varyings.positionCS = TransformObjectToHClip(IN.positionOS.xyz);
+                float3 vertexOS = IN.positionOS.xyz;
+                float3 normalOS = IN.normalOS.xyz;
+                // Pass vertex normal to fragment shader
+                float3 normalWS = TransformObjectToWorld(IN.normalOS.xyz);
+
+                float deformAmount = 0.0;
+                if (IN.color.r <0.1)
+                {
+                    deformAmount = -0.025; // Adjust the deformation factor as needed
+                }
+                vertexOS += normalOS * deformAmount;
+                
+                varyings.positionCS = TransformObjectToHClip(vertexOS);
                 // The TRANSFORM_TEX macro performs the tiling and offset
                 // transformation.
                 varyings.texcoord0.xy = TRANSFORM_TEX(IN.uv0, _BaseMap);
                 varyings.texcoord3 = IN.uv3;//TRANSFORM_TEX(IN.uv3, _BaseMap);
-                varyings.positionWS = TransformObjectToWorld(IN.positionOS.xyz);
+                varyings.positionWS = TransformObjectToWorld(vertexOS);
+
+                
+
                 return varyings;
             }
 
