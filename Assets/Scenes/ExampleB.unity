@@ -7626,6 +7626,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8384193778096116121, guid: b83d7eec35e77934a8a6444da27612b9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2255055479679177096}
+    - targetCorrespondingSourceObject: {fileID: 8384193778096116121, guid: b83d7eec35e77934a8a6444da27612b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2255055479679177098}
   m_SourcePrefab: {fileID: 100100000, guid: b83d7eec35e77934a8a6444da27612b9, type: 3}
 --- !u!1 &2255055479679177094 stripped
 GameObject:
@@ -7669,6 +7672,21 @@ MonoBehaviour:
   sideVector: {x: 1, y: 0, z: 0}
   upVector: {x: 0, y: 1, z: 0}
   forwardVector: {x: 0, y: 0, z: 1}
+--- !u!114 &2255055479679177098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2255055479679177094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01162e5121138cd4890bc3a8eda7e123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paintPosition: {x: -0, y: 1.82, z: 0}
+  paintRadius: 0.3
+  paintColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
